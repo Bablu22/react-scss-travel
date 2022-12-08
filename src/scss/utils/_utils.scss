@@ -1,0 +1,119 @@
+@use "../abstracts" as *;
+
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include responsive(large) {
+        max-width: 100%;
+        padding: 0 5rem;
+    }
+
+    @include responsive(medium) {
+        max-width: 100%;
+        padding: 0 4rem;
+    }
+
+    @include responsive(small) {
+        max-width: 100%;
+        padding: 0 2rem;
+    }
+
+    @include responsive(xsmall) {
+        max-width: 100%;
+        padding: 0 1.5rem;
+    }
+
+}
+
+.btn-default {
+    @include button($main1, $main2, $white, 3.5rem, 1.4rem, .2rem, 0, 2.4rem)
+}
+
+.btn-dark {
+    @include button($black, $black, $white, 2.5rem, 1.4rem, .2rem, 0, 2.4rem)
+}
+
+.btn-dark-sm {
+    @include button($black, $black, $white, 2rem, 1rem, .1rem, 0, 1.4rem)
+}
+
+.btn-white {
+    @include button($white, $white, $black, 2.5rem, 1.4rem, .2rem, 0, 2.4rem)
+}
+
+.pr {
+    position: relative;
+}
+
+.group {
+    margin-bottom: 1.3rem;
+
+    span {
+        font-size: 1.2rem;
+        display: inline-block;
+        color: $black;
+        cursor: pointer;
+    }
+
+    &_control {
+        display: block;
+        width: 100%;
+        border-radius: .3rem;
+        outline: none;
+        font-size: 1rem;
+        border: 1px solid $silver;
+        height: 2.5rem;
+        padding: 0 2rem;
+    }
+
+    &_textarea {
+        display: block;
+        width: 100%;
+        border-radius: .3rem;
+        outline: none;
+        font-size: 1rem;
+        border: 1px solid $silver;
+        padding: 1rem 2rem;
+
+        &::placeholder {
+            font-family: sans-serif;
+        }
+    }
+
+
+
+}
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.y-center {
+    align-items: center;
+}
+
+.p-15 {
+    padding: 1.5rem;
+}
+
+.p-10 {
+    padding: .8rem;
+}
+
+.heading {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    font-weight: 400;
+    background: linear-gradient(to right, $main1, $main2);
+    background-clip: text;
+    color: transparent;
+    transform: rotate(-2deg);
+    text-transform: capitalize;
+}

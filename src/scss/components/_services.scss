@@ -1,0 +1,99 @@
+@use "../abstracts" as *;
+
+.services {
+    margin: 8rem 0;
+    background: $sliverlight40;
+    padding: 13rem 0;
+    transform: skewY(-5deg);
+
+    &_contents {
+        transform: skewY(5deg);
+    }
+
+    &_left {
+        margin-right: 2rem;
+
+        &_heading {
+            font-size: 2.9rem;
+            font-weight: 900;
+            line-height: 3.8rem;
+            background: linear-gradient(35deg, $black, 40%, $main1 40%);
+            color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+
+            @include responsive(medium) {
+                font-size: 2rem;
+            }
+
+            @include responsive(small) {
+                font-size: 2rem;
+            }
+
+            @include responsive(xsmall) {
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+            }
+        }
+
+        &_p {
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            line-height: 1.9rem;
+        }
+    }
+
+    &_list {
+        margin-bottom: .5rem;
+
+        &_heading {
+            background-color: $white;
+            font-size: 2rem;
+            font-weight: 400;
+            cursor: pointer;
+            padding: 1rem;
+            @include align(flex, null, center, null);
+            text-transform: capitalize;
+        }
+
+        &_details {
+            max-height: 0;
+            overflow: hidden;
+            font-size: 1rem;
+            padding-left: 2rem;
+            padding-right: 3rem;
+            line-height: 1.5rem;
+
+            &_show {
+                max-height: 50rem;
+                padding-bottom: 1rem;
+                padding-top: 1rem;
+                transition: max-height 1s linear;
+                animation: setailsAnimation 1s ease-in;
+
+                @keyframes setailsAnimation {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-1rem);
+                    }
+
+                    from {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+    }
+
+    &_rotate {
+        transform: rotate(90deg);
+        transition: transform .8s linear;
+        color: $main2;
+    }
+
+    &_back {
+        transform: rotate(0deg);
+        transition: transform .8s linear;
+    }
+}

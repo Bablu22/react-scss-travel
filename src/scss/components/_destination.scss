@@ -1,0 +1,112 @@
+@use "../abstracts" as *;
+
+.destinations {
+    margin: 5rem 0;
+
+    @include responsive(xsmall) {
+        margin: 4rem 0;
+    }
+
+    &_heading {
+        font-size: 3rem;
+        color: $black;
+        font-weight: 500;
+        width: 80%;
+        line-height: 3.8rem;
+        position: relative;
+
+        @include responsive(large) {
+            width: 100%;
+
+        }
+
+        @include responsive(xsmall) {
+            font-size: 2.1rem;
+            line-height: 3.5rem;
+            text-transform: capitalize;
+
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: -.5rem;
+            left: 0;
+            width: 40%;
+            height: .2rem;
+            background-color: $main1;
+        }
+
+
+    }
+
+    &_paragraph {
+        font-size: 2rem;
+        line-height: 3rem;
+        color: $sliverlight;
+        font-weight: 400;
+
+        @include responsive(xsmall) {
+            font-size: 1.7rem;
+            line-height: 2.7rem;
+            text-transform: capitalize;
+            
+        }
+    }
+
+    &_block {
+        margin-top: 8rem;
+    }
+
+    &_card {
+        width: 100%;
+        height: 35rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+
+        &_img {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                image-rendering: pixelated
+            }
+        }
+
+        &_layer {
+            @include position(absolute, 0, 0, 0, 0, 100%, 100%);
+            @include align(flex, null, flex-end, null);
+            background: linear-gradient(to bottom, transparent 20%, $black);
+            padding: 2rem;
+            color: $white;
+
+            &_content {
+                @include align(flex, null, center, null);
+
+                &_country {
+                    font-size: 1rem;
+                    margin-left: .4rem;
+                }
+            }
+        }
+
+        &_info {
+            @include position(absolute, 25%, null, 0, null, 0, 50%);
+            @include align(flex, center, center, null);
+            background: linear-gradient(to right, $main1, $main2);
+            transition: all .5s ease-out;
+            visibility: hidden;
+        }
+
+        &:hover &_info {
+            width: 100%;
+            visibility: visible;
+        }
+    }
+
+
+}

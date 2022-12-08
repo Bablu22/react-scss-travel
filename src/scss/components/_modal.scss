@@ -1,0 +1,39 @@
+@use "../abstracts";
+
+.modal {
+    @include abstracts.position(fixed, 0, 0, 0, 0, 100%, 100%);
+    @include abstracts.align(flex, center, center, null);
+    background-color: rgba($color: #000000, $alpha: 0.7);
+
+    &_heading {
+        h3 {
+
+
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &_body {
+        background-color: abstracts.$white;
+        width: 38rem;
+        height: auto;
+        padding: 2rem;
+        font-size: 1.2rem;
+        border-radius: 0.2rem;
+        animation: modalSlide 0.5s ease-out forwards;
+
+        @keyframes modalSlide {
+            from {
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }
+}

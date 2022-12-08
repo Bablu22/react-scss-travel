@@ -1,0 +1,63 @@
+@use "../abstracts" as *;
+
+.nav_layer {
+    @include position(fixed, 0, 0, 0, 0, 100%, 100%);
+    background-color: rgba($color: #000000, $alpha: .6);
+    z-index: 3;
+}
+
+.nav {
+    @include position(fixed, 0, 0, 0, null, 20rem, 100%);
+    background-color: $white;
+    z-index: 4;
+    @include align(flex, center, center, 100%);
+    transition: all .3s linear;
+
+    &_content {
+        width: 100%;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                display: block;
+                padding: 1.5rem 3rem;
+                color: $black;
+                font-weight: 400;
+                font-size: 1.3rem;
+                text-align: right;
+                position: relative;
+
+                &::before {
+                    @include position(absolute, 0, 0, 0, 0, 100%, 100%);
+                    content: "";
+                    background: linear-gradient(to right, $main1, $main2);
+                    z-index: -1;
+                    transform: scale(0);
+                    transition: all .3s linear;
+
+                }
+
+                &:hover::before {
+                    transform: scale(1);
+                }
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+
+    &--close {
+        transform: translateX(100%);
+    }
+
+    &--open {
+        transform: translateX(0);
+    }
+
+
+}

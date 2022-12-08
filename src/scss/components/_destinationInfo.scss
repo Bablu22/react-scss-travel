@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+
+.destinationInfo {
+    margin: 10rem 0;
+
+    &_p {
+        margin-bottom: 4rem;
+        font-size: 1.2rem;
+        color: $silver;
+    }
+
+    &_details {
+        @include align(flex, space-between, center, null);
+        padding: 1rem 0;
+        border-bottom: 1px dotted $sliverlight50;
+    }
+}
